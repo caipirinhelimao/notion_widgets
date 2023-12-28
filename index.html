@@ -20,7 +20,7 @@ body{
   letter-spacing: 5px;
 }
 
-.dias, .horas, .minutos, .segundos {
+.dias, .horas {
   display: inline-block;
   padding: 20px;
   width: 100px;
@@ -34,14 +34,6 @@ body{
 .horas {
   background: #eeeeee;
   color: #183059;
-}
-
-.minutos {
-  background: #276FBF;
-}
-
-.segundos {
-  background: #F0A202;
 }
 
 .numbers {
@@ -92,11 +84,6 @@ body{
         <div id="dias" class="numbers"> </div>dias</div> 
       <div class="horas"> 
         <div  id="horas" class="numbers"> </div>horas</div> 
-      <div class="minutos"> 
-        <div  id="minutos" class="numbers"> </div>minutos</div> 
-      <div   class="segundos"> 
-        <div id="segundos" class="numbers"> </div>segundos</div> 
-      </div>
 
 </div>
 
@@ -118,14 +105,10 @@ let timer = setInterval(function() {
   // math
   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
   let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
   // display
   document.getElementById("dias").innerHTML=days
   document.getElementById("horas").innerHTML=hours
-  document.getElementById("minutos").innerHTML=minutes
-  document.getElementById("segundos").innerHTML=seconds
 
 
 
