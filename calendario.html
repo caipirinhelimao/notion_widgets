@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calendario</title>
+    <title>Document</title>
 
     <style>
 
@@ -48,7 +48,7 @@ h1 {
     box-shadow: none;
 }
 
-.relogio {
+.clock {
     display: inline-block;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
@@ -56,17 +56,17 @@ h1 {
     /* padding-left: 20px; */
 }
 
-.tempo {
+.time {
     display: inline-block;
     min-width: 37px;
 }
 
-.ponto {
+.colon {
     font-size: 1.1em;
     display: inline-block;
 }
 
-.data {
+.date {
     display: block;
     min-width: 162px;
     /* padding-right: 30px; */
@@ -92,13 +92,13 @@ h1 {
     
     <div class="card">
         <div class="greet" id="greet"></div>
-      <div class="data" id="data"></div>
-      <div class="relogio">
-        <div class="tempo" id="hora"></div>
-        <div class="ponto">:</div>
-        <div class="tempo" id="min"></div>
-        <div class="ponto">:</div>
-        <div class="tempo" id="seg"></div>
+      <div class="date" id="date"></div>
+      <div class="clock">
+        <div class="time" id="hour"></div>
+        <div class="colon">:</div>
+        <div class="time" id="min"></div>
+        <div class="colon">:</div>
+        <div class="time" id="sec"></div>
       </div>
     </div>
     
@@ -125,11 +125,11 @@ else{
 }
 hrs = today.getHours();
 if (hrs < 12)
-        greet = 'Bom dia!  ';
+        greet = 'Good Morning  ';
     else if (hrs >= 12 && hrs <= 17)
-        greet = 'Boa tarde! ';
+        greet = 'Good Afternoon ';
     else if (hrs >= 17 && hrs <= 24)
-        greet = 'Boa noite!  ';
+        greet = 'Good Evening  ';
 // console.log(today.toLocaleTimeString());
 document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
@@ -137,13 +137,13 @@ document.getElementById('min').innerHTML = minutes;
 document.getElementById('sec').innerHTML = seconds;
 }
 
-function twentyfourHour(hour) {
-if (hora > 12) {
-    return hora -= 12 
-} else if (hora === 0) {
-    return hora = 12;
+function twelveHour(hour) {
+if (hour > 12) {
+    return hour -= 12 
+} else if (hour === 0) {
+    return hour = 12;
 } else {
-    return hora
+    return hour
 }
 }
 // adds zero infront of single digit number
